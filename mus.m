@@ -15,10 +15,10 @@ function mus = mus(n, gamma, limit)
 	for k = 1 : limit
 		for j = l : l + 1
 			[mu1, mu2, mu3, mu4] = partial_mus(k, l, ln_sigma_plus, ln_sigma_minus, ln_sigma_plus_2, ln_sigma_minus_2);
-			mus(4*k + l + 1) = mu1;
-			mus(4*k + l + 2) = mu2;
-			mus(4*k + l + 3) = mu3;
-			mus(4*k + l + 4) = mu4;
+			mus(4 * k + l + 1) = mu1;
+			mus(4 * k + l + 2) = mu2;
+			mus(4 * k + l + 3) = mu3;
+			mus(4 * k + l + 4) = mu4;
 			l = l + 4;
 		end
 	end
