@@ -11,14 +11,14 @@ function mus = mus(n, gamma, limit)
 	mus(2) = - sqrt((pi^2 - ln_sigma_minus_2) - (2 * pi * ln_sigma_minus) * i);
 	mus(3) = sqrt((pi^2 - ln_sigma_plus_2) - (2 * pi * ln_sigma_plus) * i);
 	mus(4) = sqrt((pi^2 - ln_sigma_minus_2) - (2 * pi * ln_sigma_minus) * i);
-	l = 0;
+	l = 5;
 	for k = 1 : limit
 		for j = l : l + 1
-			[mu1, mu2, mu3, mu4] = partial_mus(k, l, ln_sigma_plus, ln_sigma_minus, ln_sigma_plus_2, ln_sigma_minus_2);
-			mus(4 * k + l + 1) = mu1;
-			mus(4 * k + l + 2) = mu2;
-			mus(4 * k + l + 3) = mu3;
-			mus(4 * k + l + 4) = mu4;
+			[mu1, mu2, mu3, mu4] = partial_mus(k, mod(l, 2), ln_sigma_plus, ln_sigma_minus, ln_sigma_plus_2, ln_sigma_minus_2);
+			mus(l) = mu1;
+			mus(l + 1) = mu2;
+			mus(l + 2) = mu3;
+			mus(l + 3) = mu4;
 			l = l + 4;
 		end
 	end
